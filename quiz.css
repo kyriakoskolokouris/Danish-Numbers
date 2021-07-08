@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Economica&display=swap');
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url(images/tiet.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Economica;
+}
+
+.img-container {
+  margin: 1rem auto;
+  
+}
+
+
+h1 {
+    font-size: 3.4rem;
+    color: #ece4e4;
+    margin-bottom: 5rem;
+    margin: 2.6rem auto;
+}
+
+h2 {
+  font-size: 4.2rem;
+  margin-bottom: 4rem;
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.img-container img{
+  border-radius: 2rem;
+  max-width: 10rem;
+  margin: 1.4rem auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  width: 20rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #e7a6cc;
+  border-radius: 5px;
+  background: #160505d2;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem1.4rem 0 #130505;
+  transition: transform 150ms;
+  transform: scale(1.03);
+ background: #11994a;
+  border-radius: 5px;
+  color: #4d0a58;
+}
+
+.no-btn:hover {
+  background: #eb0914;
+  color: #b6b653
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.play-logo {
+  width: 2.5rem;
+  margin-left: 1rem;
+}
+
+#highscore-btn{
+
+}
+
+#highscore-btn:hover{
+box-shadow: ;
+background:#2e2e8d;
+color: #ffffff;
+}
+
+#rocket {
+  animated: bounce;
+}
+
+@media (max-width: 768px) {
+.img-container {
+  margin: 4rem auto 1rem auto;
+}
+
+h1 {
+  font-size: 2.7rem;
+  margin-bottom: 3.5rem;
+    margin: 1.4rem auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  width: 18rem;
+  text-align: center;
+  margin-bottom: 1rem;
+ 
+}
+
+.img-container img{
+  border-radius: 2rem;
+  max-width: 8rem;
+  margin: 1rem auto;
+}
+
+}
