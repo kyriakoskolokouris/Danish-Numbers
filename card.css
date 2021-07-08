@@ -10,11 +10,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-items: center;
-  min-height: 100%;
   background: url(images/awesome.jpg) no-repeat center center fixed;;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  min-height: 100vh;
 
 }
 
@@ -26,38 +26,33 @@ h1.page-header {
   padding: 0.4rem;
 }
 
-main {
-  min-height: 70%;
-}
+
 
 .deck {
-  width: 45rem;
-  height: 35rem;
-  min-height: 50%;
-  min-width: 60%;
-  margin: 3rem auto;
-  display: flex;
- justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  perspective: 900px;
+    width: 25rem;
+    height: 20rem;
+    min-height: 40%;
+    min-width: 40%;
+    margin: 1rem auto;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 500px;
     
 }
 
 .number-card {
-  width: calc(33% - 10px);
-  height: calc(35% - 20px);
+  width: calc(35% - 10px);
+  height: calc(36% - 10px);
   margin: 0 auto;
   padding: 1,1rem;
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.8s;
-  /* flex-wrap: wrap; */
   cursor: pointer;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  
 }
 
 .number-card:hover {
@@ -122,10 +117,10 @@ footer {
 @media screen and (max-width: 768px)
 {
  
-  
 
   .deck {
-    margin: 15rem auto;
+      
+    margin: 12rem auto;
   }
 
   
@@ -136,4 +131,45 @@ footer {
     }
     }
 
-@media screen and (max-width: 425px)
+@media screen and (min-width: 900px){
+.deck {
+    width: 45rem;
+    height: 35rem;
+    min-height: 50%;
+    min-width: 60%;
+    margin: 3rem auto;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 900px;
+}
+
+.deck {
+    width: 25rem;
+    height: 20rem;
+    min-height: 40%;
+    min-width: 40%;
+    margin: 1rem auto;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 500px;
+    
+}
+
+.number-card {
+  width: calc(33% - 10px);
+  height: calc(35% - 20px);
+  margin: 0 auto;
+  padding: 1,1rem;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+  
+}
+
+}
