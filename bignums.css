@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(/public/images/awesome.jpg) no-repeat center center fixed;;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+h1 {
+  display: inline-block;
+  margin: 0.2rem auto;
+}
+
+#container-one {
+  margin: 2.5rem auto 5rem auto;
+  background: #876e79;
+  background: -moz-radial-gradient(circle, rgba(135,110,121,1) 0%, rgba(216,222,230,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(135,110,121,1) 0%, rgba(216,222,230,1) 100%);
+  background: radial-gradient(circle, rgba(135,110,121,1) 0%, rgba(216,222,230,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#876e79",endColorstr="#d8dee6",GradientType=1);
+  width: 45%;
+  border-radius: 5px;
+  box-shadow: #876e79 0px 5px 15px 0px;
+  position: relative;
+  text-align: justify;
+  
+}
+
+#hundrend {
+  border-bottom: 1px rgb(209, 194, 156) solid;
+  margin: 0.1rem;
+  padding: 0.5rem 0;
+}
+
+#thousand {
+  padding: 0.5rem 0;
+
+}
+
+footer {
+  margin-top: auto;
+}
