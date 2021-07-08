@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Economica&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Economica;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+footer {
+  
+  bottom: 0%;
+  margin: 0 auto;
+}
+
+.pagination-container { 
+  position: relative;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+
+}
+
+#pagination {
+  width: 100%;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: flex-end;
+} 
+
+button {
+  padding: 1rem 1.5rem;
+  background-color: #eb3c3c;
+  color: #f0eaea;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px #eb3c3c solid;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+button:hover {
+  color: #a83131;
+  background-color: #d6caca;
+  border: 1px rgb(167, 71, 87) solid;
+}
+
+@media (max-width: 768px) {
+
+
+  #pagination {
+    margin: 0 auto;
+    
+  }
+
+  button {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+
+
+  
+  }
+
+}
