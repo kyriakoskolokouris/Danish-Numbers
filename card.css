@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-items: center;
   min-height: 100%;
-  background: url(/public/images/awesome.jpg) no-repeat center center fixed;;
+  background: url(images/awesome.jpg) no-repeat center center fixed;;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
