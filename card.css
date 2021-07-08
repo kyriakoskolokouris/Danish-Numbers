@@ -29,11 +29,11 @@ h1.page-header {
 
 
 .deck {
-    width: 25rem;
+    width: 23rem;
     height: 20rem;
     min-height: 40%;
     min-width: 40%;
-    margin: 1rem auto;
+    margin: 2rem auto;
     display: flex;
    justify-content: center;
     align-items: center;
@@ -43,9 +43,9 @@ h1.page-header {
 }
 
 .number-card {
-  width: calc(35% - 10px);
+  width: calc(35% - 15px);
   height: calc(36% - 10px);
-  margin: 0 auto;
+  margin: 0 auto ;
   padding: 1,1rem;
   position: relative;
   transform: scale(1);
