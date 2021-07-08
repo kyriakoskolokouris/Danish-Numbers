@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="game.css">
+    <link href="/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <div id="head-display">
+                <div class="head-display-item">
+                    <p id="progressText" class="head-display-prefix"> Question
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+                <div class="head-display-item">
+                    <p id="scoreText" class="head-display-prefix"> Score
+                    </p>
+                    <h1 class="head-display-main-text" id="score">
+                        0
+                    </h1>
+            </div>
+
+            <div id="qImg">
+            </div>
+
+        </div>
+        <h1 id="question">
+        </h1>
+        <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-number="1">Choice 1</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-number="2">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-number="3">Choice 3</p>
+        </div>
+       
+    </div>
+    </div>
+    <script src="game.js" defer></script>
+</body>
+
+</html>

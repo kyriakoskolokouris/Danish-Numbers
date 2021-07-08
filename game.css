@@ -1,0 +1,140 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: rgb(41, 49, 44);
+  background: #f1f1f1;
+  display: flex;
+  font-family: Poppins;
+}
+
+#question {
+  font-size: 1.7rem;
+  color: gold;
+  margin: 2rem auto;
+}
+
+#scoreText {
+  color: goldenrod
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+#qImg {
+  margin: 10rem 0;
+  display: flex;
+}
+
+#qImg img {
+  width: 20rem;
+}
+
+.choice-container {
+  width: 100%;
+  border-radius: 1rem;
+  background: #106161;
+  color: white;
+  font-size: 1.5rem;
+  min-width: 6rem;
+  border: rgba(32, 32, 5, 0.349) 1px solid;
+  display: flex;
+  flex-direction: initial;
+  margin: 1.3rem;
+  font-size: 1.5rem;
+  
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 #bdc08e;
+  transform: scale(1.001);
+  transform: 230ms;
+  background: #0b1baca9;
+  color: silver;
+ 
+}
+
+.choice-prefix {
+  background-color: #82dfcf;
+  color: #443f3f;
+  padding: 1.5rem 2.5rem;
+  margin: 0;
+}
+
+.choice-text {
+  padding: 1.5rem;
+  width: 100%;
+  margin: 0;
+}
+
+.correct {
+  background: linear-gradient(32deg, #056205 0%, #119611 100%);
+}
+
+.wrong {
+  background: linear-gradient(32deg, #c21313 0%, #b9213a 100%);
+}
+
+#head-display {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-display-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.head-display-main-text {
+  text-align: center;
+}
+
+#progressBar {
+  width: 25rem;
+  height: 2.5rem;
+  border: 1px solid #ffffff21;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+}
+
+#progressBarFull {
+  height: 100%;
+  background: #105029;
+  width: 0%;
+}
+
+#qImg {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#qImg img {
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+
+  
+  .choice-container {
+    min-width: 20rem;
+    width: 60%;
+
+  }
+}
