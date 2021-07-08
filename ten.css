@@ -7,14 +7,20 @@
 }
 
 body {
+    display: flex;
+  flex-direction: column;
+  justify-items: center;
     background: url(images/tiet\ day.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover
+  -o-background-size: cover;
+  min-height: 100vh;
 }
 
 .eleven {
+    font-size: 1.6rem;
+    margin: 1.4rem auto;
+    padding: 0.4rem;
   color: #f8f7f7;
-  border: 0.2rem rgb(199, 107, 156) dotted;
-  margin-top: 1.7rem
+  border: 0.2rem rgb(161, 32, 184) dotted;
 }
