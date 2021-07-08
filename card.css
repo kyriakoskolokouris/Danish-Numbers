@@ -29,7 +29,7 @@ h1.page-header {
 
 
 .deck {
-    width: 23rem;
+    width: 2rem;
     height: 20rem;
     min-height: 40%;
     min-width: 40%;
@@ -120,7 +120,7 @@ footer {
 
   .deck {
       
-    margin: 3rem auto 15rem auto;
+    margin: 12rem auto;
   }
 
   
@@ -133,10 +133,10 @@ footer {
 
 @media screen and (min-width: 900px){
 .deck {
-    width: 45rem;
-    height: 35rem;
-    min-height: 50%;
-    min-width: 60%;
+    width: 35rem;
+    height: 30rem;
+    min-height: 40%;
+    min-width: 50%;
     margin: 3rem auto;
     display: flex;
    justify-content: center;
@@ -145,19 +145,6 @@ footer {
     perspective: 900px;
 }
 
-.deck {
-    width: 25rem;
-    height: 20rem;
-    min-height: 40%;
-    min-width: 40%;
-    margin: 1rem auto;
-    display: flex;
-   justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    perspective: 500px;
-    
-}
 
 .number-card {
   width: calc(33% - 10px);
