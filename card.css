@@ -33,7 +33,7 @@ h1.page-header {
     height: 20rem;
     min-height: 40%;
     min-width: 40%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
    justify-content: center;
     align-items: center;
@@ -119,8 +119,7 @@ footer {
  
 
   .deck {
-      
-    margin: 12rem auto;
+    margin: 4rem auto 12rem auto;
   }
 
   
