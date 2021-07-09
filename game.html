@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="game.css">
     <link href="/tailwind.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Economica">
 
+</head>
 <body>
+    
+<section>
     <div class="container">
         <div id="game" class="justify-center flex-column">
             <div id="head-display">
@@ -35,6 +38,7 @@
         </div>
         <h1 id="question">
         </h1>
+        <section id="choices">
         <div class="choice-container">
             <p class="choice-prefix">A</p>
             <p class="choice-text" data-number="1">Choice 1</p>
@@ -47,9 +51,11 @@
             <p class="choice-prefix">C</p>
             <p class="choice-text" data-number="3">Choice 3</p>
         </div>
-       
+    </section>
     </div>
     </div>
+</section>
+
     <script src="game.js" defer></script>
 </body>
 

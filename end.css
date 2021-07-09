@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(images/awesome.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  font-family: Poppins;
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: rgba(0, 0, 0, 0.712);
+}
+
+.end-text {
+  font-size: 1.7rem;
+  color: rgb(209, 19, 130);
+}
+
+.end-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30rem;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 12rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  border: 0.1rem solid #aaa011;
+  box-shadow: 0 0.1rem 1.4rem 0 rgba(225, 235, 86, 0.5);
+  border-radius: 34px;
+  font-family: Poppins;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+#username {
+  margin-bottom: 3rem;
+  width: 100%;
+  outline: none;
+}
+
+#end-text {
+  font-size: 2.4rem;
+  color: rgb(138, 100, 100);
+  text-align: center;
+}
+
+#saveScoreBtn {
+  border: none;
+  background: rgba(0, 0, 0, 0.712);
+}
+
+#saveScoreBtn:hover {
+  background: rgba(139, 27, 139, 0.726);
+  color: #dac448;
+  cursor: pointer;
+  box-shadow: 0 0.4rem1.4rem 0 #130505;
+  transition: transform 150ms;
+  transform: scale(1.03);
+}
+
+#play {
+  border: 1px solid #cfb3b842;
+  color: rgb(207, 179, 184);
+}
+
+#play:hover {
+  border: none;
+  color: greenyellow;
+}
+
+#study {
+  border: 1px solid #daa5204d;
+  color: goldenrod;
+}
+#study:hover {
+  background: goldenrod;
+  color: #1b1b1b;
+}

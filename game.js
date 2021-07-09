@@ -75,7 +75,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score)
 
-        return window.location.assign("end.html")
+        return window.location.assign("end.html");
     }
 
     questionCounter++
@@ -86,7 +86,7 @@ getNewQuestion = () => {
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
-    qImg.innerHTML = `<img src = ${currentQuestion.imgSrC}>`;
+    // qImg.innerHTML = `<img src = ${currentQuestion.imgSrC}>`;
  
     choices.forEach(choice => {
         const number = choice.dataset["number"];
@@ -102,29 +102,29 @@ choices.forEach(choice => {
     choice.addEventListener("click", e => {
         if(!acceptingAnswers) return
 
-        acceptingAnswers = false
+        acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
 
         let classToApply = selectedAnswer === currentQuestion.answer ? "correct" : "wrong"
 
         if(classToApply === "correct") {
-            incrementScore(TOTAL_POINTS)
+            incrementScore(TOTAL_POINTS);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply)
+        selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply)
+            selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion()
 
-        }, 1000)
+        }, 500);
     })
 })
 
 incrementScore = num => {
-    score +=num
-    scoreText.innerText = score
+    score +=num;
+    scoreText.innerText = score;
 }
 
 startGame()

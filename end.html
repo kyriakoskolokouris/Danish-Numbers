@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Score</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <link rel="stylesheet" href="end.css">
+    <link href="/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore"> Your score is </h1>
+                  <!-- FORM -->
+            <form class="end-form-container">
+              <h2 class="end-text">Enter your name below to save your score!</h2>
+                <input type="text" name="name" id="username" placeholder="Enter your name">
+                <button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
+            </form>
+            <!-- BUTTONS -->
+            <a href="quiz.html" class="btn" id="play">Play Again</a>
+            <a href="card.html" class="btn" id="study">Go Study  </i></a>
+        </div>
+    </div>
+    <script src="end.js" defer></script>
+</body>
+</html>0
