@@ -30,17 +30,29 @@ h1 {
   box-shadow: #876e79 0px 5px 15px 0px;
   position: relative;
   text-align: left;
-  
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
 }
 
-#hundrend {
-  border-bottom: 1px rgb(209, 194, 156) solid;
+ p:hover {
+  font-weight: bold;
+  cursor:pointer;
+  transform: scale(1.06);
+  padding-left: 1.2rem;
+}
+#minus {
   margin: 0.1rem;
   padding: 0.5rem 0;
 }
 
+#hundrend, #million {
+  margin: 0.1rem;
+
+}
+
 #thousand {
   padding: 0.5rem 0;
+  margin: 0.1rem;
 
 }
 

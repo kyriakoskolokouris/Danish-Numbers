@@ -57,8 +57,10 @@ button {
 
 button:hover {
   color: #a83131;
-  background-color: #d6caca;
+  background-color: #fdf9d4;
   border: 1px rgb(167, 71, 87) solid;
+  transition: transform 150ms;
+  transform: scale(1.02);
 }
 
 @media (max-width: 768px) {

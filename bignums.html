@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="bignums.css" />
   </head>
   <body>
-    <h1>Bigger numbers</h1>
+    <h1>The Rest of the numbers</h1>
     <main>
       <div id="container-one">
+        <div id="minus">
+        <p> <strong> - &#8734; </strong> : minus uendelighed </p>
+        <p> <strong> 0 </strong> : nul </p>
+        <p> <strong> 10 </strong> : ti </p>
+      </div>
         <div id="hundrend">
-        <p class="hundrends"><strong> 100 </strong> : et hundrende og <i class="fa fa-external-link" aria-hidden="true"></i></p>
-        <p class="hundrends"><strong> 201 </strong> : to hundrende og</p>
+        <p class="hundrends"><strong> 100 </strong> : et hundrende <i class="fa fa-external-link" aria-hidden="true"></i></p>
+        <p class="hundrends"><strong> 110 </strong> : et hundrende og ti <i class="fa fa-external-link" aria-hidden="true"></i></p>
+        <p class="hundrends"><strong> 201 </strong> : to hundrende og et</p>
         <p class="hundrends"><strong> 315 </strong> : tre hundrende og femten</p>
         <p class="hundrends"><strong> 426 </strong> : fire hundrende og seks-og-tyve</p>
         <p class="hundrends"><strong> 537 </strong> : fem hundrende og syv-og-tredive</p>
@@ -35,31 +41,41 @@
       <p class="thousands"> <strong> 899 912 </strong> : otte hundrede ni-og-halvfems tusind ni hundrede og tolv</p>
       <p class="thousands"> <strong> 900 684 </strong> : ni hundrede tusind seks hundrede og fire-og-firs</p>
     </div>
+    <div id="million">
+      <p> <strong> 1 000 000 </strong> : en million </p>
+      <p> <strong> 2 000 000 </strong> : to millioner </p>
+      <p> <strong> 10 000 000 </strong> : ti millioner </p>
+      <p> <strong> 100 000 000 </strong> : et hundrede millioner </p>
+      <p> <strong> 1 000 000 000</strong> : en milliard </p>
+      <p> <strong> 2 000 000 000</strong> : to milliarder </p>
+      <p> <strong> 10 000 000 000</strong> : ti milliarder </p>
+      <p> <strong> 100 000 000 000</strong> : et hundrede milliarder </p>
+    </div>
+      <p> <strong> + &#8734; </strong> : plus uendelighed </p>
+
+
+    </div>
     </div>
     </main>
     <footer>
       <div class="pagination-container">
         <div id="pagination" class="page-numbers">
-          <form style="display: inline" action="/public/card.html" method="get">
+          <form style="display: inline" action="index.html" method="get">
             <button>1 - 9</button>
           </form>
         
-          <form style="display: inline" action="/public/ten.html" method="get">
+          <form style="display: inline" action="ten.html" method="get">
             <button>11 - 19</button>
           </form>
           <form
             style="display: inline"
-            action="/public/twenty.html"
+            action="twenty.html"
             method="get"
           >
             <button>20 - 99</button>
           </form>
-          <form
-            style="display: inline"
-            action="/public/bignums.html"
-            method="get"
-          >
-            <button>100+</button>
+          <form style="display: inline" action="bignums.html" method="get">
+            <button>The Rest</button>
           </form>
           <form
           style="display: inline"
@@ -71,5 +87,6 @@
         </div>
       </div>
     </footer>
+    <script src="bignums.js"></script>
   </body>
 </html>

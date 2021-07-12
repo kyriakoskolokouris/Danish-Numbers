@@ -1,130 +1,226 @@
-// Mutable variables
-const question = document.querySelector("#question");
-const choices = Array.from(document.querySelectorAll(".choice-text"));
-const progressText = document.querySelector("#progressText");
-const scoreText = document.querySelector("#score");
-const progressBarFull = document.querySelector("#progressBarFull");
+const start = document.getElementById("start");
+const quiz = document.getElementById("quiz");
+const question = document.getElementById("question");
 const qImg = document.getElementById("qImg");
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
+const counter = document.getElementById("counter");
+const atimer = document.getElementById("atimer");
+const progress = document.getElementById("progress");
+const scoreDiv = document.getElementById("scoreContainer");
+const timeLeftDisplay = document.getElementById("time-left");
 
-
-
-let currentQuestion = {};
-let acceptingAnswers = true;
-let questionCounter = 0;
-let score = 0;
-let availableQuestions = [];
-// QUESTIONS
+// create our questions
 let questions = [{
-        question: "How is called the number 17 in Danish?",
-        choice1: "syvten",
-        choice2: "sjutton",
-        choice3: "sytten",
-        imgSrc : "images/17b.jpeg",
-        answer: 3,
+        question: "How is called 8 in Danish ?",
+        choiceA: "atten",
+        choiceB: "otte",
+        choiceC: "åtta",
+        imgSrc: "/images/17a.png",
+        correct: "B",
     },
 
     {
-        question: "How is called 8 in Danish ?",
-        choice1: "atten",
-        choice2: "otte",
-        choice3: "åtta",
-        imgSrc : "/images/17a.png",
-        answer: 2,
+        question: "How is called the number 17 in Danish?",
+        choiceA: "syvten",
+        choiceB: "sjutton",
+        choiceC: "sytten",
+        imgSrc: "images/17b.jpeg",
+        correct: "C",
     },
+
+    {
+        question: "How is called 59 in Danish ?",
+        choiceA: "ni-og-halvfems",
+        choiceB: "ni-og-halvtreds",
+        choiceC: "ni-og-halvfjerds",
+        imgSrc: "../images/17a.png",
+        correct: "B",
+    },
+
 
     {
         question: "How is called 789 in Danish ?",
-        choice1: "syv hundrede og ni-og-tres",
-        choice2: "seks hundrede og ni-og-firs",
-        choice3: "syv hundrede og ni-og-firs",
-        imgSrc : "images/17a.png",
-        answer: 3,
+        choiceA: "syv hundrede og ni-og-tres",
+        choiceB: "seks hundrede og ni-og-firs",
+        choiceC: "syv hundrede og ni-og-firs",
+        imgSrc: "images/17a.png",
+        correct: "C",
     },
 
     {
         question: "How is called 1992 in Danish ?",
-        choice1: "nitten hundrede og to-og-halvfems",
-        choice2: "tusen ni hundre og nitti­to",
-        choice3: "et­tusen nio­hundra­nittio­två",
-        imgSrc : "/images/17a.png",
-        answer: 1,
+        choiceA: "nitten hundrede og to-og-halvfems",
+        choiceB: "tusen ni hundre og nitti­to",
+        choiceC: "et­tusen nio­hundra­nittio­två",
+        imgSrc: "/images/17a.png",
+        correct: "A",
     },
 
     {
-        question: "How is called 12345 in Danish ?",
-        choice1: "tolv tusind tre hundrede og tre-og-halvtres",
-        choice2: "tolv tusind tre hundrede og fem-og-fyrre",
-        choice3: "ni-og-halvfjerds",
-        imgSrc : "../images/17a.png",
-        answer: 2,
-    }
-    
+        question: "How is called 12 345 in Danish ?",
+        choiceA: "tolv tusind tre hundrede og tre-og-halvtres",
+        choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
+        choiceC: "ni-og-halvfjerds",
+        imgSrc: "../images/17a.png",
+        correct: "B",
+    },
+
+    {
+        question: "How is called 2 021 000 in Danish ?",
+        choiceA: "to millioner en-og-tyve tusind ",
+        choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
+        choiceC: "ni-og-halvfjerds",
+        imgSrc: "../images/17a.png",
+        correct: "B",
+    },
+
+ 
+
 ];
 
-const TOTAL_POINTS = 100;
-const MAX_QUESTIONS = 8;
+// create some variables
 
-startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [...questions];
-    getNewQuestion()
+const lastQuestion = questions.length - 1;
+let runningQuestion = 0;
+let count = 10;
+const questionTime = 0; // 10s
+const timerWidth = 150; // 150px
+const timerUnit = timerWidth / questionTime;
+timeLeft = 10;
+let score = 0;
+
+
+// render a question
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = `<p>${q.question}</p>`;
+    qImg.innerHTML = `<img src=${q.imgSrc}>`;
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
 }
 
-getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem("mostRecentScore", score)
+window.addEventListener("load", startQuiz);
 
-        return window.location.assign("end.html");
+// start quiz
+function startQuiz() {
+    renderQuestion();
+
+    renderProgress();
+    renderCounter();
+    countDown();
+
+    TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+
+
+}
+
+// render progress
+function renderProgress() {
+    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
+        progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
+    }
+}
+
+// counter render
+
+function renderCounter() {
+    if (count > questionTime) {
+        // atimer.style.backgroundColor = "green";
+        atimer.style.width = count * timerUnit + "px";
+        count--
+    } else {
+        count = 10;
+        // change progress color to red
+        answerIsWrong();
+        if (runningQuestion < lastQuestion) {
+            runningQuestion++;
+            renderQuestion();
+            countDown();
+        } else {
+            // end the quiz and store the score in the localStorage
+
+            clearInterval(TIMER);
+
+
+            localStorage.setItem("mostRecentScore", score)
+            return window.location.assign("end.html");
+            
+        }
+    }
+}
+
+function countDown() {
+    setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timeLeft = 0)
+        }
+        timeLeftDisplay.innerHTML = timeLeft;
+        counter.innerHTML = count;
+        timeLeft -= 1;
+    }, 1000)
+}
+
+
+// checkAnswer
+
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+        // answer is correct
+        score++;
+        // change progress color to green
+        answerIsCorrect();
+    } else {
+        // answer is wrong
+        // change progress color to red
+        answerIsWrong();
     }
 
-    questionCounter++
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    count = 10;
 
-    
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
-    question.innerText = currentQuestion.question;
-    // qImg.innerHTML = `<img src = ${currentQuestion.imgSrC}>`;
- 
-    choices.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number]
-    })
 
-    availableQuestions.splice(questionsIndex, 1);
+    if (runningQuestion < lastQuestion) {
 
-    acceptingAnswers = true;
+        runningQuestion++;
+        renderQuestion();
+
+    } else {
+        // end the quiz and show the score
+
+        clearInterval(TIMER);
+        // scoreRender();
+        localStorage.setItem("mostRecentScore", score)
+            return window.location.assign("end.html");
+    }
 }
 
-choices.forEach(choice => {
-    choice.addEventListener("click", e => {
-        if(!acceptingAnswers) return
-
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
-
-        let classToApply = selectedAnswer === currentQuestion.answer ? "correct" : "wrong"
-
-        if(classToApply === "correct") {
-            incrementScore(TOTAL_POINTS);
-        }
-
-        selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion()
-
-        }, 500);
-    })
-})
-
-incrementScore = num => {
-    score +=num;
-    scoreText.innerText = score;
+// answer is correct
+function answerIsCorrect() {
+    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
-startGame()
+// answer is Wrong
+function answerIsWrong() {
+    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+}
+
+// score render
+function scoreRender() {
+    scoreDiv.style.display = "block";
+
+    // calculate the amount of question percent answered by the user
+    const scorePerCent = Math.round(100 * score / questions.length);
+
+    // choose the image based on the scorePerCent
+    let img = (scorePerCent >= 80) ? "img/5.png" :
+        (scorePerCent >= 60) ? "img/4.png" :
+        (scorePerCent >= 40) ? "img/3.png" :
+        (scorePerCent >= 20) ? "img/2.png" :
+        "img/1.png";
+
+    scoreDiv.innerHTML = `<img src=${img}>`;
+    scoreDiv.innerHTML += `<p>${scorePerCent}%</p>`;
+}
