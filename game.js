@@ -87,7 +87,7 @@ let runningQuestion = 0;
 let count = 10;
 const questionTime = 0; // 10s
 const timerWidth = 150; // 150px
-const timerUnit = timerWidth / questionTime;
+const timerUnit = timerWidth / count;
 timeLeft = 10;
 let score = 0;
 
@@ -128,11 +128,20 @@ function renderProgress() {
 // counter render
 
 function renderCounter() {
-    if (count > questionTime) {
-        // atimer.style.backgroundColor = "green";
-        atimer.style.width = count * timerUnit + "px";
+    if (count > 6) {
+        atimer.style.backgroundColor = "mediumseagreen";
+        atimer.style.width = count +  "rem";
         count--
-    } else {
+    }else if (count > 3) {
+        atimer.style.backgroundColor = "orange";
+        atimer.style.width = count +  "rem";
+        count--
+    }else if (count >= 1 ){
+        atimer.style.backgroundColor = "red";
+        atimer.style.width = count +  "rem";
+        count--
+    } 
+     else {
         count = 10;
         // change progress color to red
         answerIsWrong();
@@ -144,7 +153,6 @@ function renderCounter() {
             // end the quiz and store the score in the localStorage
 
             clearInterval(TIMER);
-
 
             localStorage.setItem("mostRecentScore", score)
             return window.location.assign("end.html");

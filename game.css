@@ -83,16 +83,15 @@ body{
 }
 
 #btimer{
-  width : 150px;
+  width : 0px;
   height : 10px;
   border-radius: 10px;
-  background-color: mediumseagreen;
+  background-color: none;
   margin-left : 25px;
 }
 #atimer{
   height : 10px;
   border-radius: 10px;
-  background-color: lightgray;
   margin-top : -10px;
   margin-left : 25px;
 }
