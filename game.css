@@ -1,45 +1,34 @@
 
 body{
-  font-size: 20px;
-  font-family: monospace;
-  background: url(images/meadow2.jpg) no-repeat center center fixed; 
+  font-size:2rem;
+  font-family: Economica;
+  background: url(images/nyhavn\ vinter.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+ 
 }
 
 #container{
   margin : 10rem auto;
-  background-color: rgba(255, 255, 255, 0.144);
   height: 25rem;
   width : 55rem;
-  border-radius: 5px;
-  box-shadow: 0px 5px 15px 0px;
+  border-radius: 2rem;
+  box-shadow: rgb(3, 3, 3) 0px 5px 15px 0px;
   position: relative;
-}
-
-
-
-#qImg{
-  width : 200px;
-  height : 200px;
-  position: absolute;
-  left : 0px;
-  top : 0px;
-}
-
-#qImg img{
-  width : 200px;
-  height : 200px;
-  border-top-left-radius: 5px;
+  background: url(images/meadow2.jpg) no-repeat bottom fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
 }
 
 #question{
-  width:40rem;
-  height : 10rem;
+  width: 50rem;
+  height : 7rem;
   position: absolute;
-  right:0;
   top:0;
 }
 #question p{
@@ -50,97 +39,77 @@ body{
 
 #choices{
   display: flex;
+  flex-direction: column;
  position: absolute;
-  right : 0;
-  top : 10rem;
-  padding : 5rem;
+  left : 7rem;
+  top : 1.65rem;
+  padding : 4rem 2.5rem;
+  
 }
 .choice{
-  
-  display: inline-block;
   display: flex;
-  width : 11rem;
+  width: 32rem;
   text-align: justify;
   border : 1px solid grey;
   border-radius: 5px;
   cursor: pointer;
-  padding : 1rem;
+  padding : 0.85rem ;
+  font-size: 1.9rem;
+  margin: 0.3rem;
 }
 .choice:hover{
-  border : 2px solid rgb(255, 221, 28);
+  border : 2px solid rgb(49, 46, 26);
   font-weight: bold;
+  background: black;
+  color: rgb(25, 174, 211);
 }
 
 #timer{
   position: absolute;
-  height : 100px;
-  width : 200px;
-  bottom : 0px;
+  height : 5.5rem;
+  width : 15rem;
+  bottom : 0;
   text-align: center;
 }
 #counter{
-  font-size: 3em;
-}
+  font-size: 3.85rem;
+    margin-top : -0.75rem;
 
-#btimer{
-  width : 0px;
-  height : 10px;
-  border-radius: 10px;
-  background-color: none;
-  margin-left : 25px;
 }
-#atimer{
-  height : 10px;
-  border-radius: 10px;
-  margin-top : -10px;
-  margin-left : 25px;
+#countdowntimer{
+  height : 0.85rem;
+  border-radius: 0.5rem;
+  margin-top : -0.45rem;
+  margin-left : 1.75rem;
 }
 
 #progress{
-  width : 500px;
+  width : 30rem;
   position: absolute;
-  bottom : 0px;
-  right : 0px;
-  padding:5px;
+  bottom : 0;
+  right : 0;
+  padding: 0.6rem;
   text-align: right;
 }
 .prog{
-  width : 25px;
-  height : 25px;
+  width : 1.5rem;
+  height : 1.5rem;
   border: 1px solid #000;
   display: inline-block;
-  border-radius: 25%;
-  margin-left : 5px;
-  margin-right : 5px;
+  border-radius: 55%;
+  margin: 0 0.5rem;
+  
 }
-/* #scoreContainer{
-  margin : 20px auto;
-  background-color: white;
-  opacity: 0.8;
-  height: 300px;
-  width : 700px;
-  border-radius: 5px;
-  box-shadow: 0px 5px 15px 0px;
-  position: relative;
-  display: none;
-} */
-/* #scoreContainer img{
-  position: absolute;
-  top:100px;
-  left:325px;
-} */
-/* #scoreContainer p{
-  position: absolute;
-  display: block;
-  width : 59px;
-  height :59px;
-  top:130px;
-  left:325px;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-} */
 
+
+#Denmark
+{
+  background: linear-gradient(90deg, transparent, transparent 30%, white 30%, white 40%, transparent 40%, transparent),
+              linear-gradient(0deg, red, red 43%, white 43%, white 58%, red 58%, red);
+  width: 5rem;
+  height: 3.5rem;
+  display: inline-block;
+}
 
 
 /* @media screen and (max-width: 400px) {

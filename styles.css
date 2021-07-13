@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: url(images/helena-hermansen-K852rTCryb0-unsplash.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+    display: flex;
+}
+
+#logo{
+    font-family: Chewy;
+}
+
+.top-menu{
+    display: flex;
+    justify-items: baseline;
+    
+}
+h1 {
+  text-transform: uppercase;
+  color: white;
+}
+
+img {
+  width: 10rem;
+  border-radius: 25%;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  padding: 1.5rem 0;
+  width: 20rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  padding: 1rem;
+  background-color: rgb(42, 194, 42);
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem1.4rem 0 #130505;
+  transition: transform 150ms;
+  transform: scale(1.03);
+}

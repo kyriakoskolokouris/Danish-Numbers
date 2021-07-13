@@ -5,13 +5,14 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="game.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet" />
 
   </head>
   <body>
     <div id="container">
       <div id="quiz">
-        <div id="question"></div>
-        <div id="qImg"></div>
+        <div id="question"> </div>
+        <!-- <div id="qImg"></div> -->
         <div id="choices">
           <div class="choice" id="A" onclick="checkAnswer('A')"></div>
           <div class="choice" id="B" onclick="checkAnswer('B')"></div>
@@ -21,8 +22,7 @@
           <div id="counter">
             <span id="time-left">10</span>
           </div>
-          <div id="btimer"></div>
-          <div id="atimer"></div>
+          <div id="countdowntimer"></div>
           
         </div>
         <div id="progress"></div>

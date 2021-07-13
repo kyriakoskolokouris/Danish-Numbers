@@ -1,24 +1,39 @@
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
 const counter = document.getElementById("counter");
-const atimer = document.getElementById("atimer");
+const countdownTimer = document.getElementById("countdowntimer");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 const timeLeftDisplay = document.getElementById("time-left");
 
 // create our questions
-let questions = [{
+let questions = [
+    {
+        question: "How is called 5 in Danish ?",
+        choiceA: "femten",
+        choiceB: "fem",
+        choiceC: "femm",
+        correct: "B",
+    },
+    
+    {
         question: "How is called 8 in Danish ?",
         choiceA: "atten",
         choiceB: "otte",
         choiceC: "åtta",
-        imgSrc: "/images/17a.png",
         correct: "B",
+    },
+
+    {
+        question: "How is called the number 13 in Danish?",
+        choiceA: "tretten",
+        choiceB: "treten",
+        choiceC: "træten",
+        correct: "A",
     },
 
     {
@@ -26,7 +41,6 @@ let questions = [{
         choiceA: "syvten",
         choiceB: "sjutton",
         choiceC: "sytten",
-        imgSrc: "images/17b.jpeg",
         correct: "C",
     },
 
@@ -35,7 +49,6 @@ let questions = [{
         choiceA: "ni-og-halvfems",
         choiceB: "ni-og-halvtreds",
         choiceC: "ni-og-halvfjerds",
-        imgSrc: "../images/17a.png",
         correct: "B",
     },
 
@@ -45,7 +58,6 @@ let questions = [{
         choiceA: "syv hundrede og ni-og-tres",
         choiceB: "seks hundrede og ni-og-firs",
         choiceC: "syv hundrede og ni-og-firs",
-        imgSrc: "images/17a.png",
         correct: "C",
     },
 
@@ -54,7 +66,6 @@ let questions = [{
         choiceA: "nitten hundrede og to-og-halvfems",
         choiceB: "tusen ni hundre og nitti­to",
         choiceC: "et­tusen nio­hundra­nittio­två",
-        imgSrc: "/images/17a.png",
         correct: "A",
     },
 
@@ -63,7 +74,6 @@ let questions = [{
         choiceA: "tolv tusind tre hundrede og tre-og-halvtres",
         choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
         choiceC: "ni-og-halvfjerds",
-        imgSrc: "../images/17a.png",
         correct: "B",
     },
 
@@ -72,7 +82,6 @@ let questions = [{
         choiceA: "to millioner en-og-tyve tusind ",
         choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
         choiceC: "ni-og-halvfjerds",
-        imgSrc: "../images/17a.png",
         correct: "B",
     },
 
@@ -86,8 +95,6 @@ const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 10;
 const questionTime = 0; // 10s
-const timerWidth = 150; // 150px
-const timerUnit = timerWidth / count;
 timeLeft = 10;
 let score = 0;
 
@@ -96,11 +103,11 @@ let score = 0;
 function renderQuestion() {
     let q = questions[runningQuestion];
 
-    question.innerHTML = `<p>${q.question}</p>`;
-    qImg.innerHTML = `<img src=${q.imgSrc}>`;
+    question.innerHTML = `<p>${q.question} <div id="Denmark"></div> </p>`;
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
+
 }
 
 window.addEventListener("load", startQuiz);
@@ -108,10 +115,10 @@ window.addEventListener("load", startQuiz);
 // start quiz
 function startQuiz() {
     renderQuestion();
-
     renderProgress();
     renderCounter();
     countDown();
+    
 
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
 
@@ -128,38 +135,40 @@ function renderProgress() {
 // counter render
 
 function renderCounter() {
-    if (count > 6) {
-        atimer.style.backgroundColor = "mediumseagreen";
-        atimer.style.width = count +  "rem";
+
+    if ( count > 6) {
+        countdownTimer.style.backgroundColor = "mediumseagreen";
+        countdownTimer.style.width = count +  "rem";
         count--
     }else if (count > 3) {
-        atimer.style.backgroundColor = "orange";
-        atimer.style.width = count +  "rem";
+        countdownTimer.style.backgroundColor = "orange";
+        countdownTimer.style.width = count +  "rem";
         count--
     }else if (count >= 1 ){
-        atimer.style.backgroundColor = "red";
-        atimer.style.width = count +  "rem";
+        countdownTimer.style.backgroundColor = "red";
+        countdownTimer.style.width = count +  "rem";
         count--
     } 
      else {
+        countdownTimer.style.width = count ;
         count = 10;
+
         // change progress color to red
         answerIsWrong();
         if (runningQuestion < lastQuestion) {
             runningQuestion++;
             renderQuestion();
-            countDown();
         } else {
             // end the quiz and store the score in the localStorage
 
             clearInterval(TIMER);
-
             localStorage.setItem("mostRecentScore", score)
             return window.location.assign("end.html");
             
         }
     }
 }
+
 
 function countDown() {
     setInterval(() => {
@@ -207,12 +216,12 @@ function checkAnswer(answer) {
 
 // answer is correct
 function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+    document.getElementById(runningQuestion).style.backgroundColor = "#25b449";
 }
 
 // answer is Wrong
 function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    document.getElementById(runningQuestion).style.backgroundColor = "#e71b1b";
 }
 
 // score render

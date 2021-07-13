@@ -99,7 +99,6 @@ h2 {
   transition: transform 150ms;
   transform: scale(1.03);
  background: #11994a;
-  border-radius: 5px;
   color: #4d0a58;
 }
 
