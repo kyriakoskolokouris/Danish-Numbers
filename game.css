@@ -1,8 +1,7 @@
-
-body{
-  font-size:2rem;
+body {
+  font-size: 2rem;
   font-family: Economica;
-  background: url(images/nyhavn\ vinter.jpg) no-repeat center center fixed; 
+  background: url(images/nyhavn\ vinter.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -10,127 +9,107 @@ body{
   height: 100vh;
   display: grid;
   place-items: center;
- 
 }
 
-#container{
-  margin : 10rem auto;
+#container {
+  margin: 10rem auto;
   height: 25rem;
-  width : 55rem;
+  width: 55rem;
   border-radius: 2rem;
   box-shadow: rgb(3, 3, 3) 0px 5px 15px 0px;
   position: relative;
-  background: url(images/meadow2.jpg) no-repeat bottom fixed; 
+  background: url(images/meadow2.jpg) no-repeat bottom fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
- 
 }
 
-#question{
+#question {
   width: 50rem;
-  height : 7rem;
+  height: 7rem;
   position: absolute;
-  top:0;
+  top: 0;
 }
-#question p{
-  margin : 0;
-  padding : 2rem;
+#question p {
+  margin: 0;
+  padding: 2rem;
   font-size: 1.5em;
 }
 
-#choices{
+#choices {
   display: flex;
   flex-direction: column;
- position: absolute;
-  left : 7rem;
-  top : 1.65rem;
-  padding : 4rem 2.5rem;
-  
+  position: absolute;
+  left: 7rem;
+  top: 1.65rem;
+  padding: 4rem 2.5rem;
 }
-.choice{
+.choice {
   display: flex;
   width: 32rem;
   text-align: justify;
-  border : 1px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
   cursor: pointer;
-  padding : 0.85rem ;
+  padding: 0.85rem;
   font-size: 1.9rem;
   margin: 0.3rem;
 }
-.choice:hover{
-  border : 2px solid rgb(49, 46, 26);
+.choice:hover {
+  border: 2px solid rgb(49, 46, 26);
   font-weight: bold;
   background: black;
   color: rgb(25, 174, 211);
 }
 
-#timer{
+#timer {
   position: absolute;
-  height : 5.5rem;
-  width : 15rem;
-  bottom : 0;
+  height: 5.5rem;
+  width: 15rem;
+  bottom: 0;
   text-align: center;
 }
-#counter{
+#counter {
   font-size: 3.85rem;
-    margin-top : -0.75rem;
-
+  margin-top: -0.75rem;
 }
-#countdowntimer{
-  height : 0.85rem;
+#countdowntimer {
+  height: 0.85rem;
   border-radius: 0.5rem;
-  margin-top : -0.45rem;
-  margin-left : 1.75rem;
+  margin-top: -0.45rem;
+  margin-left: 1.75rem;
 }
 
-#progress{
-  width : 30rem;
+#progress {
+  width: 30rem;
   position: absolute;
-  bottom : 0;
-  right : 0;
+  bottom: 0;
+  right: 0;
   padding: 0.6rem;
   text-align: right;
 }
-.prog{
-  width : 1.5rem;
-  height : 1.5rem;
+.prog {
+  width: 1.5rem;
+  height: 1.5rem;
   border: 1px solid rgba(104, 104, 104, 0.637);
   display: inline-block;
   border-radius: 55%;
   margin: 0 0.5rem;
-  
 }
 
-
-#Denmark
-{
-  background: linear-gradient(90deg, transparent, transparent 30%, white 30%, white 40%, transparent 40%, transparent),
-              linear-gradient(0deg, red, red 43%, white 43%, white 58%, red 58%, red);
+#Denmark {
+  background: linear-gradient(
+      90deg,
+      transparent,
+      transparent 30%,
+      white 30%,
+      white 40%,
+      transparent 40%,
+      transparent
+    ),
+    linear-gradient(0deg, red, red 43%, white 43%, white 58%, red 58%, red);
   width: 5rem;
   height: 3.5rem;
   display: inline-block;
 }
-
-
-/* @media screen and (max-width: 400px) {
-    .choice-container {
-        font-size: 1.1rem;
-        width: 16rem;
-        margin: 1rem -3rem;
-        padding: 0;
-    }
-
-@media screen and (min-width: 900px){
-
-    
-#game {
-    display: table;
-    background-color: #cecece;
-    padding: 3rem;
-    margin: 0 auto;
-    border-radius: 1rem;
-}
-} */

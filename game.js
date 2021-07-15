@@ -89,7 +89,7 @@ let questions = [{
         choiceA: "to millioner en-og-tyve tusind ",
         choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
         choiceC: "ni-og-halvfjerds",
-        correct: "B",
+        correct: "A",
     },
 
 
