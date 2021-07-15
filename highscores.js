@@ -7,4 +7,3 @@ highScoresList.innerHTML =
         return `<li class="high-score">${player.name} : ${100 * player.score / 10}  % </li>`
     }).join("");
 
-localStorage.clear();
