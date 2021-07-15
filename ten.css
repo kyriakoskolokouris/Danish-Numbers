@@ -19,8 +19,15 @@ body {
 
 .eleven {
     font-size: 1.6rem;
-    margin: 1.4rem auto;
+    margin: 2.25rem auto;
     padding: 0.4rem;
-  color: #f8f7f7;
-  border: 0.2rem rgb(161, 32, 184) dotted;
+  color: #202020;
+  border: 0.2rem rgb(247, 231, 250) dotted;
+}
+
+@media (max-width: 768px) {
+
+  .eleven{
+    color: white;
+  }
 }

@@ -7,6 +7,9 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-items: center;
  
 }
 
@@ -94,7 +97,7 @@ body{
 .prog{
   width : 1.5rem;
   height : 1.5rem;
-  border: 1px solid #000;
+  border: 1px solid rgba(104, 104, 104, 0.637);
   display: inline-block;
   border-radius: 55%;
   margin: 0 0.5rem;

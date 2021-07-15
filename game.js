@@ -11,15 +11,14 @@ const scoreDiv = document.getElementById("scoreContainer");
 const timeLeftDisplay = document.getElementById("time-left");
 
 // create our questions
-let questions = [
-    {
+let questions = [{
         question: "How is called 5 in Danish ?",
         choiceA: "femten",
         choiceB: "fem",
         choiceC: "femm",
         correct: "B",
     },
-    
+
     {
         question: "How is called 8 in Danish ?",
         choiceA: "atten",
@@ -41,6 +40,14 @@ let questions = [
         choiceA: "syvten",
         choiceB: "sjutton",
         choiceC: "sytten",
+        correct: "C",
+    },
+
+    {
+        question: "How is called the number 40 in Danish?",
+        choiceA: "fire",
+        choiceB: "firs",
+        choiceC: "fyrre",
         correct: "C",
     },
 
@@ -71,7 +78,7 @@ let questions = [
 
     {
         question: "How is called 12 345 in Danish ?",
-        choiceA: "tolv tusind tre hundrede og tre-og-halvtres",
+        choiceA: "tolv tusind tre hundrede og tre-og-halvtreds",
         choiceB: "tolv tusind tre hundrede og fem-og-fyrre",
         choiceC: "ni-og-halvfjerds",
         correct: "B",
@@ -85,7 +92,7 @@ let questions = [
         correct: "B",
     },
 
- 
+
 
 ];
 
@@ -118,7 +125,7 @@ function startQuiz() {
     renderProgress();
     renderCounter();
     countDown();
-    
+
 
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
 
@@ -136,21 +143,20 @@ function renderProgress() {
 
 function renderCounter() {
 
-    if ( count > 6) {
+    if (count > 6) {
         countdownTimer.style.backgroundColor = "mediumseagreen";
-        countdownTimer.style.width = count +  "rem";
+        countdownTimer.style.width = count + "rem";
         count--
-    }else if (count > 3) {
+    } else if (count > 3) {
         countdownTimer.style.backgroundColor = "orange";
-        countdownTimer.style.width = count +  "rem";
+        countdownTimer.style.width = count + "rem";
         count--
-    }else if (count >= 1 ){
+    } else if (count >= 1) {
         countdownTimer.style.backgroundColor = "red";
-        countdownTimer.style.width = count +  "rem";
+        countdownTimer.style.width = count + "rem";
         count--
-    } 
-     else {
-        countdownTimer.style.width = count ;
+    } else {
+        countdownTimer.style.width = count;
         count = 10;
 
         // change progress color to red
@@ -164,7 +170,7 @@ function renderCounter() {
             clearInterval(TIMER);
             localStorage.setItem("mostRecentScore", score)
             return window.location.assign("end.html");
-            
+
         }
     }
 }
@@ -210,7 +216,7 @@ function checkAnswer(answer) {
         clearInterval(TIMER);
         // scoreRender();
         localStorage.setItem("mostRecentScore", score)
-            return window.location.assign("end.html");
+        return window.location.assign("end.html");
     }
 }
 
@@ -224,20 +230,3 @@ function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#e71b1b";
 }
 
-// score render
-function scoreRender() {
-    scoreDiv.style.display = "block";
-
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score / questions.length);
-
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-        (scorePerCent >= 60) ? "img/4.png" :
-        (scorePerCent >= 40) ? "img/3.png" :
-        (scorePerCent >= 20) ? "img/2.png" :
-        "img/1.png";
-
-    scoreDiv.innerHTML = `<img src=${img}>`;
-    scoreDiv.innerHTML += `<p>${scorePerCent}%</p>`;
-}

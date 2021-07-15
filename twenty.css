@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   min-height: 100%;
   font-family: Economica;
-  background: url(images/twenty.jpg) no-repeat center center fixed;
+  background: url(images/tiet\ sort.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -21,7 +21,7 @@ body {
 h1.page-header {
   font-size: 3rem;
   background: none;
-  color: #c7af62;
+  color: #776117;
   margin: 1.4rem auto;
 }
 
@@ -67,7 +67,7 @@ border-radius: 20px;
   margin: 2rem;
   cursor: pointer;
   border-radius: 30% 40% 40% 30% / 30% 40% 40% 30%;
-  background-color: rgba(228, 5, 5, 0.596);
+  background-color: rgba(141, 3, 3, 0.972);
   color: rgb(196, 185, 89);
   width: 50%;
   display: flex;

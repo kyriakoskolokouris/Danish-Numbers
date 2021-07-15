@@ -14,6 +14,15 @@ body {
   font-family: Poppins;
 }
 
+#end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 h1 {
   font-size: 2.6rem;
   color: rgba(0, 0, 0, 0.712);
@@ -21,7 +30,7 @@ h1 {
 
 .end-text {
   font-size: 1.7rem;
-  color: rgb(209, 19, 130);
+  color: rgb(184, 34, 67);
 }
 
 .end-form-container {
@@ -92,3 +101,14 @@ input::placeholder {
   background: goldenrod;
   color: #1b1b1b;
 }
+
+#Denmark
+{
+  margin: 0;
+  background: linear-gradient(90deg, transparent, transparent 30%, white 30%, white 40%, transparent 40%, transparent),
+              linear-gradient(0deg, red, red 43%, white 43%, white 58%, red 58%, red);
+  width: 3rem;
+  height: 2rem;
+  display: inline;
+}
+
