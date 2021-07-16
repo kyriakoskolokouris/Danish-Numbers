@@ -126,10 +126,7 @@ function startQuiz() {
     renderCounter();
     countDown();
 
-
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
-
-
 }
 
 // render progress

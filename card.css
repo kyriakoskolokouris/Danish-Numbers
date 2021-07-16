@@ -95,18 +95,6 @@ img {
   border-radius: 10px;
 }
 
-.lang {
-  position: absolute;
-  top: 80%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-}
-
-footer {
-  margin-top: auto;
-}
-
 @media screen and (max-width: 768px) {
   .deck {
     margin: 4rem auto 12rem auto;
